@@ -60,25 +60,17 @@ public class Formatacoes {
 		}
 		return binarios;
 	}
-	
-	public void binarioParaString(String mensagem) {
-		String mensagemBinaria = "";
-		String[] binarios = transfomarEmBinario(mensagem);
-		for(int cont = 0; cont < mensagem.length(); cont++) {
-			mensagemBinaria+=binarios[cont];
-		}
-		char[] binForString = new char[mensagemBinaria.length()];
+	// TUDO resolver o problema de valor excedendo valor do array
+	public void binarioParaString(int mensagem) {
+		String binarioFormatado = String.format("%8s", mensagem).replace(' ', '0');
 		
-		for(int bin = 0, cont = 0; bin < mensagemBinaria.length(); bin += 8, cont++) {
-			String byteString = mensagemBinaria.substring(bin, bin + 8);
-			int unicode = Integer.parseInt(byteString, 2);
-			binForString[cont] = (char) unicode;
+		StringBuilder novaMensagem = new StringBuilder();
+		
+		for(int cont = 0; cont < binarioFormatado.length(); cont += 8) {
+			String byteParaString = binarioFormatado.substring(cont, cont + 8);
+			int codigo = Integer.parseInt(byteParaString, 2);
+			novaMensagem.append((char) codigo);
 		}
-		System.out.println("Texto: ");
-		for(int cont = 0; cont < binForString.length; cont++) {
-			System.out.print(binForString[cont]);
-		}
+		System.out.println("Mensagem: " + novaMensagem.toString());
 	}
-	
-
 }

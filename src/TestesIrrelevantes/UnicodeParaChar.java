@@ -4,17 +4,17 @@ public class UnicodeParaChar {
 	public static void main(String[] args) {
 		
 		Formatacoes testes = new Formatacoes();
-		/*
-		char letra = 'A';
-		int code = (int) letra;
-		String binario = Integer.toBinaryString(code);
-		System.out.println(binario);
-		*/
 		
-		//testes.unicodeParaBinario("Hello World");
-		testes.binarioParaString("HelloWorld");
-		
-		
+		testes.binarioParaString(1001000);
+		testes.binarioParaString(1100101);
+		testes.binarioParaString(1101100);
+		testes.binarioParaString(1101100);
+		testes.binarioParaString(1101111);
+		testes.binarioParaString(1010111);
+		testes.binarioParaString(1101111);
+		testes.binarioParaString(1110010);
+		testes.binarioParaString(1101100);
+		testes.binarioParaString(1100100);
 		
 	}
 
